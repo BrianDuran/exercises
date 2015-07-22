@@ -11,8 +11,8 @@ class Metric
 #Calculates the average value
   def average
     total = 0
-    metrics = @values
-    metrics.each { |metric|
+    metricsValues = @values
+    metricsValues.each { |metric|
       total = total+metric       
     }
     average = total / metrics.size
@@ -31,7 +31,7 @@ class Metric
     "Odds: " + odds.join('-')
   end
 
-  def add (value)
+  def addvalue (value)
     if value > 0 and value < 100
       @values << value
     end
@@ -47,7 +47,7 @@ end
 
 m = Metric.new([10, 3, 5, 6, 8, 8])
 puts m.get_values
-m.add 15
+m.addvalue 15
 puts m.get_values
 puts m.average
 puts m.odds
