@@ -1,2 +1,0 @@
-# exercises
-Code snippets exercises
