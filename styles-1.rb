@@ -1,0 +1,55 @@
+class Metric
+
+  def initialize values
+     @values = values
+  end
+
+  def get_values
+    "Values: " + @values.join("-");
+  end
+
+#Calculates the average value
+  def average
+    total = 0
+    metrics = @values
+    metrics.each { |metric|
+      total = total+metric       
+    }
+    average = total / metrics.size
+    return "Average: "+average.to_s
+  end
+
+
+  def odds 
+    odds = @values.select do |value|
+      if value % 2 == 0
+        false
+      else
+        true
+       end
+    end
+    "Odds: " + odds.join('-')
+  end
+
+  def add (value)
+    if value > 0 and value < 100
+      @values << value
+    end
+  end
+
+
+  def hash
+    { "first" => @values[0],
+      "last" => @values[@values.size - 1]
+    }
+  end
+end
+
+m = Metric.new([10, 3, 5, 6, 8, 8])
+puts m.get_values
+m.add 15
+puts m.get_values
+puts m.average
+puts m.odds
+puts m.hash
+
