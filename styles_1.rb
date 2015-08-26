@@ -15,7 +15,7 @@ class Metric
     metricsValues.each { |metric|
       total = total+metric       
     }
-    average = total / metrics.size
+    average = total / metricsValues.size
     return "Average: "+average.to_s
   end
 
