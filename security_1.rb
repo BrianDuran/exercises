@@ -17,7 +17,7 @@ delete from User where id = 1 OR 1=1
 User.destroy_all("name like '" + param[:name] + "'")
 
 =begin 
-
+no puede haber sql injection por las comillas
 destroy from User where name like 'patito'
 delete from User where name like '%' = it matches everything
 change for something like
