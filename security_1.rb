@@ -16,5 +16,11 @@ delete from User where id = 1 OR 1=1
 # Case 2
 User.destroy_all("name like '" + param[:name] + "'")
 
-# User.destroy_all('name like ?', param[:name])
+=begin 
+
+destroy from User where name like 'patito'
+delete from User where name like '%' = it matches everything
+change for something like
+User.destroy_all('where name = ?, param[:name]')
+=end 
 
