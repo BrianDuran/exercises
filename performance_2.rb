@@ -3,3 +3,10 @@ def get_user_ids(role = 1)
   users = User.where(:role => role)
   users.map(&:id)
 end
+
+#---------------------------------------
+
+def get_user_ids(role = 1)
+  users = User.where(role: role)
+  users.map(&:id)
+end
